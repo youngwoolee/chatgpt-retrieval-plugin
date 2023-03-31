@@ -3,7 +3,9 @@ from io import BufferedReader
 from typing import Optional
 from fastapi import UploadFile
 import mimetypes
-from PyPDF2 import PdfReader
+#from PyPDF2 import PdfReader
+from tika import parser
+
 import docx2txt
 import csv
 import pptx
@@ -44,8 +46,12 @@ def extract_text_from_filepath(filepath: str, mimetype: Optional[str] = None) ->
 def extract_text_from_file(file: BufferedReader, mimetype: str) -> str:
     if mimetype == "application/pdf":
         # Extract text from pdf using PyPDF2
-        reader = PdfReader(file)
-        extracted_text = " ".join([page.extract_text() for page in reader.pages])
+        #reader = PdfReader(file)
+        #extracted_text = " ".join([page.extract_text() for page in reader.pages])
+        parsed = parser.from_file(file)
+        extracted_text = parsed['content']
+
+
     elif mimetype == "text/plain" or mimetype == "text/markdown":
         # Read text from plain text file
         extracted_text = file.read().decode("utf-8")
