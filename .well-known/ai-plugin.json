@@ -1,7 +1,7 @@
 {
   "schema_version": "v1",
-  "name_for_model": "retrieval",
-  "name_for_human": "Retrieval Plugin",
+  "name_for_model": "shinhan-test",
+  "name_for_human": "shinhan test plugin",
   "description_for_model": "Plugin for searching through the user's documents (such as files, emails, and more) to find answers to questions and retrieve relevant information. Use it whenever a user asks something that might be found in their personal information.",
   "description_for_human": "Search through your documents.",
   "auth": {
@@ -10,10 +10,10 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://your-app-url.com/.well-known/openapi.yaml",
+    "url": "https://chat-plugin-2zrez4lshq-du.a.run.app/.well-known/openapi.yaml",
     "has_user_authentication": false
   },
-  "logo_url": "https://your-app-url.com/.well-known/logo.png",
-  "contact_email": "hello@contact.com", 
+  "logo_url": "https://chat-plugin-2zrez4lshq-du.a.run.app/.well-known/logo.png",
+  "contact_email": "shc.ywlee@gmail.com",
   "legal_info_url": "hello@legal.com"
 }
